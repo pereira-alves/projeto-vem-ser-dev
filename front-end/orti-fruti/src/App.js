@@ -3,13 +3,13 @@ import './App.css';
 import { PlusOutlined, UnorderedListOutlined } from '@ant-design/icons';
 import { Menu , Layout } from 'antd';
 import Routes from './routes';
-import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom'
 const { Header, Footer, Sider, Content } = Layout;
 
 
 
 function App() {
-  let history = useHistory()
+  const history = useHistory()
 
   function handleClick() {
     history.push("/adicionar");
