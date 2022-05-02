@@ -31,7 +31,7 @@ export default function AdicionarProduto(){
         <div className='produto__container'>
             <h1>Adicionar novo produto</h1>
             <br/>
-            <div>
+            <div className='form__produto'>
                 <Form 
                 name='submiProduto'
                 labelCol={{span:8}}
@@ -39,21 +39,24 @@ export default function AdicionarProduto(){
                 onFinish={handleSubmit}
                 autoComplete='off'> 
                     <Form.Item 
-                    label='Nome do item' 
+                    label='Nome do Item: '
+                    labelCol={{ span: 10 }}
                     name={"name"}
                     rules={ [ {required: true, message: "O nome do item não pode ser vazio"} ] }>
                         <Input/>
                     </Form.Item>
 
                     <Form.Item 
-                    label='Descrição do item' 
+                    label='Descrição do item :' 
+                    labelCol={{ span: 10 }}
                     name={"description"}
                     rules={[{required: false, message: "Insira a descrição do item."}]}>
-                        <Input/>
+                       <Input/>
                     </Form.Item>
 
                     <Form.Item 
-                    label='Quantidade' 
+                    label='Quantidade :  '
+                    labelCol={{ span: 10 }}
                     name={"quantity"}
                     >
                         <InputNumber/>

@@ -1,16 +1,27 @@
 .produto__container{
     width: 100%;
-    max-width: 1200px;
     padding: 16px;
+}
+.produto__container h1{
+    color: green;
+    font-size: 24px;
 }
 
 .produto__card__container{
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
+    border-radius: 25px;
 }
+.produto__card__container p{
+    font-weight: 500;
+    font-size: 16px;
+}
+
 .produto__card__actions{
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-start;
 }

@@ -1,12 +1,14 @@
 .produto__container {
+    background-color: #c6c6c6;
     width: 100%;
     height: 100%;
-    max-width: 800px;
     padding: 16px;
     display: flex;
     flex-direction: column;
+    font-size: 32px;
 }
 .produto__card__container{
+    background-color: #c6c6c6;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -17,5 +19,7 @@
 }
 
 .card{
+    border-radius: 15px;
+    margin: 10px; 
     width: 200px;
 }

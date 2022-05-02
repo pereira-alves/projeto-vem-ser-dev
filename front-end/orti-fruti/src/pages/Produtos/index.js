@@ -34,7 +34,7 @@ export default function Produtos(){
                         <p>
                             Quantidade: {produto.quantity}
                         </p>
-                        <Button type="primary" onClick={() => history.push(`/detalhes/${produto.id}`)}>Detalhes</Button>
+                        <Button type="primary" sucesses onClick={() => history.push(`/detalhes/${produto.id}`)}>Detalhes</Button>
                     </Card>
                 ))}
 

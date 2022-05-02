@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
-import { PlusOutlined, UnorderedListOutlined } from '@ant-design/icons';
-import { Menu , Layout } from 'antd';
+import { PlusOutlined, UnorderedListOutlined, ShoppingCartOutlined } from '@ant-design/icons';
+import { Menu, Layout } from 'antd';
 import Routes from './routes';
 import { useHistory } from 'react-router-dom'
 const { Header, Footer, Sider, Content } = Layout;
@@ -11,27 +11,45 @@ const { Header, Footer, Sider, Content } = Layout;
 function App() {
   const history = useHistory()
 
-  function handleClick() {
-    history.push("/adicionar");
-  }
-
   return (
     <div className="main">
       <Layout className='main__content'>
         <Header className='header'>Lista de Compras</Header>
         <Layout >
           <Sider className='menu'>
-            <Menu className='menu__section'>
-              <Menu.Item key={1} icon={<PlusOutlined />} onClick={handleClick}>
-                Adicionar Produto
-              </Menu.Item>
-
-              <Menu.Item key={2} icon={ <UnorderedListOutlined />} onClick={() => history.push('/produtos')}>
-                Listar Produtos
-              </Menu.Item>
-            </Menu>  
+              <Menu className='menu__section'
+              items={[
+                {
+                  label: (
+                    <a target="_self" rel="Página Inicial" href="http://localhost:3000">
+                      Página Inicial
+                    </a>
+                  ),
+                  icon: <ShoppingCartOutlined />,
+                  disabled: false
+                },
+                {
+                  label: (
+                    <a target="_self" rel="Adicionar Item" href="http://localhost:3000/adicionar">
+                      Adicionar
+                    </a>
+                  ),
+                  icon: <PlusOutlined/>,
+                  disabled: false
+                },
+                {
+                  label: (
+                    <a target="_self" rel="Listar Produtos" href="http://localhost:3000/produtos">
+                        Listar
+                    </a>
+                  ),
+                  icon: <UnorderedListOutlined />,
+                  disabled: false,
+                },
+              ]}
+            />
           </Sider>
-          <Content>
+          <Content className="content__box">
             <Routes/>
           </Content>
         </Layout>
