@@ -9,7 +9,10 @@ const { Header, Footer, Sider, Content } = Layout;
 
 
 function App() {
-  const history = useHistory()
+  let history = useHistory();
+  function handleClick() {
+    history.push("/adicionar");
+  }
 
   return (
     <div className="main">
@@ -17,43 +20,31 @@ function App() {
         <Header className='header'>Lista de Compras</Header>
         <Layout >
           <Sider className='menu'>
-              <Menu className='menu__section'
-              items={[
-                {
-                  label: (
-                    <a target="_self" rel="Página Inicial" href="http://localhost:3000">
-                      Página Inicial
-                    </a>
-                  ),
-                  icon: <ShoppingCartOutlined />,
-                  disabled: false
-                },
-                {
-                  label: (
-                    <a target="_self" rel="Adicionar Item" href="http://localhost:3000/adicionar">
-                      Adicionar
-                    </a>
-                  ),
-                  icon: <PlusOutlined/>,
-                  disabled: false
-                },
-                {
-                  label: (
-                    <a target="_self" rel="Listar Produtos" href="http://localhost:3000/produtos">
-                        Listar
-                    </a>
-                  ),
-                  icon: <UnorderedListOutlined />,
-                  disabled: false,
-                },
-              ]}
-            />
+          <Menu className='menu__section'> 
+          <Menu.Item key={1} icon={ <ShoppingCartOutlined />} onClick={() => history.push('/')}>
+                Inicio
+              </Menu.Item> 
+              <Menu.Item key={2} icon={<PlusOutlined />} onClick={handleClick}>
+                Adicionar Produto
+              </Menu.Item>
+              <Menu.Item key={3} icon={ <UnorderedListOutlined />} onClick={() => history.push('/produtos')}>
+                Listar Produtos
+              </Menu.Item>
+            </Menu>
+    
           </Sider>
           <Content className="content__box">
             <Routes/>
           </Content>
         </Layout>
-        <Footer className='footer'>Todos os direitos reservados.</Footer>
+        <Footer className='footer'>
+        <div id="anima-time">
+        Todos os direitos reservados.
+          <div>
+            <a href="https://github.com/pereira-alves/projeto-vem-ser-dev" target={"_blank"} rel="noreferrer">Projeto VEM-SER-DEV</a>
+          </div>
+        </div>
+        </Footer>
     </Layout>
 
     </div>

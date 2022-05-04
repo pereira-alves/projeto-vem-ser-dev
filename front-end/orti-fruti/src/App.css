@@ -32,11 +32,45 @@
   background-color: rgba(198, 198, 198, 0);
   opacity: 0.5;
 }
+.ant-layout-footer a{
+  color: black;
+}
 .menu__section{
   background-color: rgb(199, 240, 199);
   border-radius: 15px;
   padding: 15px;
-
-
-
 }
+
+@keyframes anda {
+  0%{
+      transform: translate(0);
+  }
+  100%{
+      transform: translateX(100px);
+  }
+}
+
+#anima-time div{
+  display: inline-block;
+  width: 170px;
+  height: 30px;
+  text-align: center;
+}
+
+#anima-time div:nth-child(1){
+
+
+  /*animation-name: anda;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  */
+  animation: anda 2s linear 1s infinite alternate;
+  animation-fill-mode: backwards ;
+  animation-play-state: running;
+  }
+  #anima-time div:nth-child(1):hover{
+      animation-play-state: paused;
+  }
